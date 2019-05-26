@@ -1,13 +1,6 @@
 import { truncate, realpathSync } from "fs";
 import TurnProcessor from "./turnProcessor";
 
-// TODO:
-// - build以下にbuildしたあとの成果物を出力させる
-// - gitignoreの設定
-//   - Node
-//   - react
-//   - typescript
-
 export default class Duel {
   firstPlayer: string;
   secondPlayer: string;
