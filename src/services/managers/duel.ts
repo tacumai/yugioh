@@ -33,7 +33,7 @@ export default class Duel {
         this.currentPlayer = this.firstPlayer;
       }
 
-      if (count > 5) {
+      if (count > 10) {
         break;
       }
     }
