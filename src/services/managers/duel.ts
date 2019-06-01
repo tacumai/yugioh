@@ -1,4 +1,4 @@
-import { truncate, realpathSync } from "fs";
+import * as fs from "fs";
 import TurnProcessor from "./turnProcessor";
 
 export default class Duel {
@@ -11,9 +11,16 @@ export default class Duel {
     this.firstPlayer = firstPlayer;
     this.secondPlayer = secondPlayer;
     this.finalDecision = false;
+    this.firstPlayer.setUpDeck();
+    this.secondPlayer.setUpDeck();
   }
 
   public start() {
+    const cards = JSON.parse(
+      fs.readFileSync(__dirname + "/resources/monsterData.json", "utf-8")
+    );
+    console.log(cards[0].name);
+
     this.currentPlayer = this.firstPlayer;
     const turnProcessor = new TurnProcessor(this.currentPlayer);
 
