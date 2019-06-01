@@ -1,6 +1,10 @@
 import * as fs from "fs";
 import TurnProcessor from "./turnProcessor";
 
+// JSONファイル
+import * as data from "json!../../../resources/monsterData.json";
+import { dirname } from "path";
+
 export default class Duel {
   firstPlayer: string;
   secondPlayer: string;
@@ -16,11 +20,6 @@ export default class Duel {
   }
 
   public start() {
-    const cards = JSON.parse(
-      fs.readFileSync("../resources/monsterData.json", "utf-8")
-    );
-    console.log(cards[0].name);
-
     this.currentPlayer = this.firstPlayer;
     const turnProcessor = new TurnProcessor(this.currentPlayer);
 
