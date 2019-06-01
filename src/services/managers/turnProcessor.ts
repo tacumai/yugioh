@@ -1,5 +1,7 @@
+import Player from "../models/players/player";
+
 export default class TurnProcessor {
-  player: string;
+  player: Player;
   currentPhase: string;
 
   drawPhase: string;
@@ -9,7 +11,7 @@ export default class TurnProcessor {
   secondMainPhase: string;
   endPhase: string;
 
-  constructor(player: string) {
+  constructor(player: Player) {
     this.player = player;
     this.drawPhase = "ドローフェーズです.";
     this.standbyPhase = "スタンバイフェーズです.";
@@ -20,11 +22,11 @@ export default class TurnProcessor {
   }
 
   public exec() {
-    console.log(`${this.player}: ${this.drawPhase}`);
-    console.log(`${this.player}: ${this.standbyPhase}`);
-    console.log(`${this.player}: ${this.firstMainPhase}`);
-    console.log(`${this.player}: ${this.battlePhase}`);
-    console.log(`${this.player}: ${this.secondMainPhase}`);
-    console.log(`${this.player}: ${this.endPhase}`);
+    console.log(`${this.player.name}: ${this.drawPhase}`);
+    console.log(`${this.player.name}: ${this.standbyPhase}`);
+    console.log(`${this.player.name}: ${this.firstMainPhase}`);
+    console.log(`${this.player.name}: ${this.battlePhase}`);
+    console.log(`${this.player.name}: ${this.secondMainPhase}`);
+    console.log(`${this.player.name}: ${this.endPhase}`);
   }
 }

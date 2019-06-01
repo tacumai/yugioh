@@ -1,8 +1,8 @@
-export default abstract class Monster {
-  name: string;
-  type: string;
+import Card from "../card";
+
+export default abstract class Monster extends Card {
+  monsterType: string;
   race: string;
-  detail: string;
 
   attackScore: Number;
   deffenceScore: Number;
@@ -12,6 +12,7 @@ export default abstract class Monster {
   constructor(
     name: string,
     type: string,
+    monsterType: string,
     race: string,
     detail: string,
     attackScore: Number,
@@ -19,8 +20,8 @@ export default abstract class Monster {
     posture: string,
     reverse: boolean
   ) {
-    this.name = name;
-    this.type = type;
+    super(name, type, detail);
+    this.monsterType = monsterType;
     this.race = race;
     this.detail = detail;
     this.attackScore = attackScore;

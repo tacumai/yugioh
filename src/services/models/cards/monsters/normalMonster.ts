@@ -5,6 +5,7 @@ export default class NormalMonster extends Monster {
     name: string,
     type: string,
     race: string,
+    monsterType: string,
     detail: string,
     attackScore: Number,
     deffenceScore: Number,
@@ -14,6 +15,7 @@ export default class NormalMonster extends Monster {
     super(
       name,
       type,
+      monsterType,
       race,
       detail,
       attackScore,
