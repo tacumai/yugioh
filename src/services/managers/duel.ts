@@ -11,13 +11,13 @@ export default class Duel {
     this.firstPlayer = firstPlayer;
     this.secondPlayer = secondPlayer;
     this.finalDecision = false;
-    this.firstPlayer.setUpDeck();
-    this.secondPlayer.setUpDeck();
+    // this.firstPlayer.setUpDeck();
+    // this.secondPlayer.setUpDeck();
   }
 
   public start() {
     const cards = JSON.parse(
-      fs.readFileSync(__dirname + "/resources/monsterData.json", "utf-8")
+      fs.readFileSync("../resources/monsterData.json", "utf-8")
     );
     console.log(cards[0].name);
 
