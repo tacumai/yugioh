@@ -1,5 +1,6 @@
 import Card from "../card";
 import { Attribute } from "./attribute";
+import { CardType } from "../cardType";
 
 export default abstract class Monster extends Card {
   attribute: Attribute;
@@ -12,7 +13,7 @@ export default abstract class Monster extends Card {
 
   constructor(
     name: string,
-    type: string,
+    cardType: CardType,
     attribute: Attribute,
     race: string,
     detail: string,
@@ -21,7 +22,7 @@ export default abstract class Monster extends Card {
     posture: string,
     reverse: boolean
   ) {
-    super(name, type, detail);
+    super(name, cardType, detail);
     this.attribute = attribute;
     this.race = race;
     this.detail = detail;
