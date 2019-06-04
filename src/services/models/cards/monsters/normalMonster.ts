@@ -1,11 +1,12 @@
 import Monster from "./monster";
 import { Attribute } from "./attribute";
+import { MonsterType } from "./monsterType";
 
 export default class NormalMonster extends Monster {
   constructor(
     name: string,
     type: string,
-    race: string,
+    monsterType: MonsterType,
     attribute: Attribute,
     detail: string,
     attackScore: Number,
@@ -17,7 +18,7 @@ export default class NormalMonster extends Monster {
       name,
       type,
       attribute,
-      race,
+      monsterType,
       detail,
       attackScore,
       deffenceScore,
