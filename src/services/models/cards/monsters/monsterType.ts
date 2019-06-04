@@ -18,5 +18,10 @@ export enum MonsterType {
   AQUA = "水族",
   PYRO = "炎族",
   ROCK = "岩石族",
-  PLANT = "植物族"
+  PLANT = "植物族",
+  PSYCHIC = "サイキック族",
+  WYRM = "幻竜族",
+  CYBERSE = "サイバース族",
+  DIVINE_BEAST = "幻神獣族",
+  GOD = "創造神族"
 }
