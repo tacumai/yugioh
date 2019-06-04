@@ -1,10 +1,11 @@
 import Card from "../card";
 import { Attribute } from "./attribute";
 import { CardType } from "../cardType";
+import { MonsterType } from "./monsterType";
 
 export default abstract class Monster extends Card {
   attribute: Attribute;
-  race: string;
+  monsterType: MonsterType;
 
   attackScore: Number;
   deffenceScore: Number;
@@ -15,7 +16,7 @@ export default abstract class Monster extends Card {
     name: string,
     cardType: CardType,
     attribute: Attribute,
-    race: string,
+    monsterType: MonsterType,
     detail: string,
     attackScore: Number,
     deffenceScore: Number,
@@ -24,7 +25,7 @@ export default abstract class Monster extends Card {
   ) {
     super(name, cardType, detail);
     this.attribute = attribute;
-    this.race = race;
+    this.monsterType = monsterType;
     this.detail = detail;
     this.attackScore = attackScore;
     this.deffenceScore = deffenceScore;
