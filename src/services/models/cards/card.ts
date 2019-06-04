@@ -1,11 +1,13 @@
+import { CardType } from "./cardType";
+
 export default abstract class Card {
   name: string;
-  cardType: string;
+  cardType: CardType;
   detail: string;
 
-  constructor(name: string, type: string, detail: string) {
+  constructor(name: string, cardType: CardType, detail: string) {
     this.name = name;
-    this.cardType = type;
+    this.cardType = cardType;
     this.detail = detail;
   }
 }

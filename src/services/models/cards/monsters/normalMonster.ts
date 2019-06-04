@@ -1,11 +1,12 @@
 import Monster from "./monster";
 import { Attribute } from "./attribute";
+import { CardType } from "../cardType";
 import { MonsterType } from "./monsterType";
 
 export default class NormalMonster extends Monster {
   constructor(
     name: string,
-    type: string,
+    cardType: CardType,
     monsterType: MonsterType,
     attribute: Attribute,
     detail: string,
@@ -16,7 +17,7 @@ export default class NormalMonster extends Monster {
   ) {
     super(
       name,
-      type,
+      cardType,
       attribute,
       monsterType,
       detail,
