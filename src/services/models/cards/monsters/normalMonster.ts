@@ -2,6 +2,7 @@ import Monster from "./monster";
 import { Attribute } from "./attribute";
 import { CardType } from "../cardType";
 import { MonsterType } from "./monsterType";
+import { Position } from "./position";
 
 export default class NormalMonster extends Monster {
   constructor(
@@ -12,7 +13,7 @@ export default class NormalMonster extends Monster {
     detail: string,
     attackScore: Number,
     deffenceScore: Number,
-    posture: string,
+    position: Position,
     reverse: boolean
   ) {
     super(
@@ -23,7 +24,7 @@ export default class NormalMonster extends Monster {
       detail,
       attackScore,
       deffenceScore,
-      posture,
+      position,
       reverse
     );
   }

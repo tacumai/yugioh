@@ -2,6 +2,7 @@ import Card from "../card";
 import { Attribute } from "./attribute";
 import { CardType } from "../cardType";
 import { MonsterType } from "./monsterType";
+import { Position } from "./position";
 
 export default abstract class Monster extends Card {
   attribute: Attribute;
@@ -10,7 +11,7 @@ export default abstract class Monster extends Card {
   attackScore: Number;
   deffenceScore: Number;
   reverse: boolean;
-  posture: string;
+  position: Position;
 
   constructor(
     name: string,
@@ -20,7 +21,7 @@ export default abstract class Monster extends Card {
     detail: string,
     attackScore: Number,
     deffenceScore: Number,
-    posture: string,
+    position: Position,
     reverse: boolean
   ) {
     super(name, cardType, detail);
@@ -29,7 +30,7 @@ export default abstract class Monster extends Card {
     this.detail = detail;
     this.attackScore = attackScore;
     this.deffenceScore = deffenceScore;
-    this.posture = posture;
+    this.position = position;
     this.reverse = reverse;
   }
 
