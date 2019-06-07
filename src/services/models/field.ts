@@ -10,6 +10,7 @@ export default class Field {
   spellAndTrapZone: Card[];
   fieldSpellZone: Card;
   Graveyard: Card[];
+  banishmentZone: Card[];
 
   constructor() {}
 }
