@@ -14,4 +14,14 @@ export default class Player {
     this.deck = new Deck(cards);
     return this.deck;
   }
+
+  public addCard(card: Card): void {
+    this.handCards.push(card);
+  }
+
+  public discard(targetList: number[]): void {
+    targetList.forEach(idx => {
+      this.handCards.splice(idx, 1);
+    });
+  }
 }
