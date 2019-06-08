@@ -15,6 +15,14 @@ export default class Player {
     return this.deck;
   }
 
+  public draw(count: number): void {
+    // デッキの先頭を取得
+    this.handCards.push(this.deck[0]);
+
+    // デッキの先頭を削除
+    this.deck.stock.shift();
+  }
+
   public addCard(card: Card): void {
     this.handCards.push(card);
   }
