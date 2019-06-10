@@ -7,17 +7,17 @@ import { JsonProperty } from "json-typescript-mapper";
 import Card from "../card";
 
 export default class NormalMonster extends Monster {
-  name: string = undefined;
+  name: string;
 
-  monsterType: string = undefined;
+  monsterType: string;
 
-  attribute: string = undefined;
+  attribute: string;
 
-  detail: string = undefined;
+  detail: string;
 
-  attackScore: number = 0;
+  attackScore: number;
 
-  deffenceScore: number = 0;
+  deffenceScore: number;
 
   constructor(
     name: string,

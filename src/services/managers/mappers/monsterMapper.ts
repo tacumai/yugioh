@@ -12,6 +12,19 @@ export module MonsterMapper {
     console.log(monster["detail"]);
     console.log(monster["attackScore"]);
     console.log("==============");
+    const hoge = new NormalMonster(
+      monster["name"],
+      CardType.MONSTER,
+      monster["monsterType"],
+      monster["attribute"],
+      monster["detail"],
+      monster["attackScore"],
+      monster["deffenceScore"],
+      Position.ATTACK,
+      false
+    );
+
+    console.log(hoge.detail);
     return new NormalMonster(
       monster["name"],
       CardType.MONSTER,
