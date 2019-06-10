@@ -8,12 +8,21 @@ export default class Player {
 
   constructor(name: string) {
     this.name = name;
+    this.handCards = [];
   }
 
-  public setUpDeck(cards: Object[]): Deck {
+  public setUpDeck(cards: Card[]): Deck {
     this.deck = new Deck(cards);
     return this.deck;
   }
+
+  // public draw(count: number): void {
+  //   // デッキの先頭を取得
+  //   this.handCards.push(this.deck.stock[0]);
+
+  //   // デッキの先頭を削除
+  //   this.deck.stock.shift();
+  // }
 
   public addCard(card: Card): void {
     this.handCards.push(card);
