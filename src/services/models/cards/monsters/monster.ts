@@ -5,8 +5,8 @@ import { MonsterType } from "./monsterType";
 import { Position } from "./position";
 
 export default abstract class Monster extends Card {
-  attribute: Attribute;
-  monsterType: MonsterType;
+  attribute: string;
+  monsterType: string;
 
   attackScore: Number;
   deffenceScore: Number;
@@ -16,8 +16,8 @@ export default abstract class Monster extends Card {
   constructor(
     name: string,
     cardType: CardType,
-    attribute: Attribute,
-    monsterType: MonsterType,
+    attribute: string,
+    monsterType: string,
     detail: string,
     attackScore: Number,
     deffenceScore: Number,

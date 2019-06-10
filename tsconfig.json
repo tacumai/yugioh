@@ -5,7 +5,9 @@
     "sourceMap": true,
     "rootDir": ".",
     "outDir": "./built/",
-    "types": ["node"]
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "exclude": ["node_modules"]
 }

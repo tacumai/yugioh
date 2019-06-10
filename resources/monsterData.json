@@ -1,40 +1,45 @@
 [
   {
     "name": "サイクロプス",
-    "type": "地",
-    "race": "獣戦士",
+    "monsterType": "地",
+    "attribute": "獣戦士",
     "detail": "１つ目の巨人。太い腕で殴りかかってくる。要注意。",
+    "hasEffect": false,
     "attackScore": 1200,
     "deffenceScore": 1000
   },
   {
     "name": "コピックス",
-    "type": "地",
-    "race": "戦士",
+    "monsterType": "地",
+    "attribute": "戦士",
+    "hasEffect": false,
     "detail": "いろんな奴に返信して、相手をだましながら戦う戦士。",
     "attackScore": 600,
     "deffenceScore": 500
   },
   {
     "name": "マンモスの墓場",
-    "type": "地",
-    "race": "恐竜",
+    "monsterType": "地",
+    "attribute": "恐竜",
+    "hasEffect": false,
     "detail": "仲間のお墓を守るマンモス。墓荒らしを両者なく攻撃。",
     "attackScore": 1200,
     "deffenceScore": 800
   },
   {
     "name": "ブラック・マジシャン",
-    "type": "闇",
-    "race": "魔法使い",
+    "monsterType": "闇",
+    "attribute": "魔法使い",
+    "hasEffect": false,
     "detail": "魔法使いとしては、攻撃力・守備力ともに最強クラス。",
     "attackScore": 2500,
     "deffenceScore": 2100
   },
   {
     "name": "蜘蛛男",
-    "type": "地",
-    "race": "昆虫",
+    "monsterType": "地",
+    "attribute": "昆虫",
+    "hasEffect": false,
     "detail": "巨大クモが知恵をつけた姿。糸を吐き動きを封じ込める。",
     "attackScore": 700,
     "deffenceScore": 1400

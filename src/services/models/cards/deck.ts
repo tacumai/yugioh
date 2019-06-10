@@ -2,9 +2,9 @@ import Card from "./card";
 
 // TODO: Objectを受け取る感じにしたので、Deck型を受け取るようになおす
 export default class Deck {
-  stock: Object[];
-  constructor(cards: Object[]) {
-    this.stock = cards;
+  stock: Card[];
+  constructor(cards: Card[]) {
+    this.stock = cards || [];
   }
 
   public shuffle(): void {
