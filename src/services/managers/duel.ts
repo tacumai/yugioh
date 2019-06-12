@@ -1,10 +1,9 @@
 import * as fs from "fs";
 import * as data from "json!../../../resources/monsterData.json";
-import { MonsterMapper } from "./services/managers/mappers/monsterMapper";
-import TurnProcessor from "./turnProcessor";
-
-// JSONファイル
+import { MonsterMapper } from "../managers/mappers/monsterMapper";
 import Player from "../models/players/player";
+import Card from "../models/cards/card";
+import Deck from "../models/cards/deck";
 
 export default class Duel {
   firstPlayer: Player;
@@ -16,15 +15,17 @@ export default class Duel {
     this.firstPlayer = firstPlayer;
     this.secondPlayer = secondPlayer;
     this.finalDecision = false;
+    this.setUpDeck();
   }
 
   private setUpDeck(): void {
-    const monsters = [];
+    const cards: Card[] = [];
 
-    data["result"].forEach(monster => {
-      monsters.push(MonsterMapper.build(monster));
+    data["result"].forEach(card => {
+      cards.push(MonsterMapper.build(card));
     });
 
-    this.firstPlayer.deck;
+    const deck = new Deck(cards);
+    this.firstPlayer.deck = deck;
   }
 }
