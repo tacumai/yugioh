@@ -19,6 +19,7 @@ export default class Duel {
   }
 
   private setUpDeck(): void {
+    // TODO: 後攻プレイヤーのセットアップ処理
     const cards: Card[] = [];
 
     data["result"].forEach(card => {
