@@ -1,5 +1,7 @@
 import Card from "../cards/card";
 import Deck from "../cards/deck";
+import * as data from "json!../../../resources/monsterData.json";
+import { MonsterMapper } from "../../managers/mappers/monsterMapper";
 
 export default class Player {
   name: string;
@@ -9,20 +11,27 @@ export default class Player {
   constructor(name: string) {
     this.name = name;
     this.handCards = [];
+    this.setUpDeck();
+    this.draw(5);
   }
 
-  public setUpDeck(cards: Card[]): Deck {
-    this.deck = new Deck(cards);
-    return this.deck;
+  private setUpDeck(): void {
+    const cards: Card[] = [];
+
+    data["result"].forEach(card => {
+      cards.push(MonsterMapper.build(card));
+    });
+
+    const deck = new Deck(cards);
+    this.deck = deck;
   }
 
-  // public draw(count: number): void {
-  //   // デッキの先頭を取得
-  //   this.handCards.push(this.deck.stock[0]);
-
-  //   // デッキの先頭を削除
-  //   this.deck.stock.shift();
-  // }
+  public draw(count: number): void {
+    for (let i = 0; i < count; i++) {
+      this.handCards.push(this.deck.stock[0]);
+      this.deck.stock.shift();
+    }
+  }
 
   public addCard(card: Card): void {
     this.handCards.push(card);
