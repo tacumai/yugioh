@@ -6,9 +6,12 @@ import Card from "../models/cards/card";
 import Deck from "../models/cards/deck";
 
 export default class Duel {
+  // Users
   firstPlayer: Player;
   secondPlayer: Player;
   currentPlayer: Player;
+
+  // Other
   finalDecision: boolean;
 
   constructor(firstPlayer: Player, secondPlayer: Player) {
@@ -16,6 +19,7 @@ export default class Duel {
     this.secondPlayer = secondPlayer;
     this.finalDecision = false;
     this.setUpDeck();
+    this.firstPlayer.summon(2, 3);
   }
 
   private setUpDeck(): void {
