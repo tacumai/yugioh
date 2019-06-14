@@ -4,7 +4,6 @@ import Deck from "./cards/deck";
 
 export default class Field {
   deckZone: Deck;
-  exDeckZone: Deck;
   mainMonsterZone: { [key: number]: Monster };
   // TODO: 魔法トラップカードの抽象クラスができたら型を変更
   spellAndTrapZone: { [key: number]: Card };
@@ -12,9 +11,8 @@ export default class Field {
   Graveyard: Card[];
   banishmentZone: Card[];
 
-  constructor(deck: Deck, exDeck: Deck) {
+  constructor(deck: Deck) {
     this.deckZone = deck;
-    this.exDeckZone = exDeck;
     this.mainMonsterZone = {
       1: null,
       2: null,

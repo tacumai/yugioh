@@ -6,9 +6,12 @@ import Card from "../models/cards/card";
 import Deck from "../models/cards/deck";
 
 export default class Duel {
+  // Users
   firstPlayer: Player;
   secondPlayer: Player;
   currentPlayer: Player;
+
+  // Other
   finalDecision: boolean;
 
   constructor(firstPlayer: Player, secondPlayer: Player) {
