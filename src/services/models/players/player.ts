@@ -16,7 +16,40 @@ export default class Player {
     this.handCards = [];
     this.field = new Field(this.setUpDeck());
     this.setUpDeck();
-    this.draw(5);
+    this.draw(3);
+  }
+
+  public summon(handIdx: number, fieldIdx: number): void {
+    const targetFieldPosition = this.field[fieldIdx];
+    const card = this.handCards[handIdx];
+
+    if (targetFieldPosition != null) {
+      throw new Error("Monster is already summoned here.");
+    }
+
+    if (!this.inspectMonsterCard(card)) {
+      throw new Error("this card is not Monster.");
+    }
+
+    this.field.mainMonsterZone[fieldIdx] = card as Monster;
+    console.log(this.field);
+  }
+
+  public draw(count: number): void {
+    for (let i = 0; i < count; i++) {
+      this.handCards.push(this.field.deckZone.stock[i]);
+      this.field.deckZone.stock.shift();
+    }
+  }
+
+  public addCard(card: Card): void {
+    this.handCards.push(card);
+  }
+
+  public discard(targetList: number[]): void {
+    targetList.forEach(idx => {
+      this.handCards.splice(idx, 1);
+    });
   }
 
   private setUpDeck(): Deck {
@@ -29,27 +62,7 @@ export default class Player {
     return new Deck(cards);
   }
 
-  public draw(count: number): void {
-    for (let i = 0; i < count; i++) {
-      this.handCards.push(this.deck.stock[0]);
-      this.deck.stock.shift();
-    }
-  }
-
-  public summon(card_idx: number): void {
-    // TODO:
-    // - フィールドをインスタンス化
-    // -
-    const monster = this.handCards[card_idx];
-  }
-
-  public addCard(card: Card): void {
-    this.handCards.push(card);
-  }
-
-  public discard(targetList: number[]): void {
-    targetList.forEach(idx => {
-      this.handCards.splice(idx, 1);
-    });
+  private inspectMonsterCard(card: Card): boolean {
+    return card instanceof Monster;
   }
 }

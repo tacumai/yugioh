@@ -19,6 +19,7 @@ export default class Duel {
     this.secondPlayer = secondPlayer;
     this.finalDecision = false;
     this.setUpDeck();
+    this.firstPlayer.summon(2, 3);
   }
 
   private setUpDeck(): void {
